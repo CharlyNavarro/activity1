@@ -1,0 +1,50 @@
+{
+  "canisters": {
+    "activity1_backend": {
+      "build": "npx azle activity1_backend",
+      "candid": "src/activity1_backend/activity1_backend.did",
+      "gzip": true,
+      "main": "src/activity1_backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/activity1_backend/activity1_backend.wasm"
+    },
+    "activity1_frontend": {
+      "dependencies": [
+        "activity1_backend"
+      ],
+      "source": [
+        "src/activity1_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "activity1_frontend"
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
